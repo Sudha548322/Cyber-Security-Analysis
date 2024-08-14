@@ -1,0 +1,2463 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h1>Project Title :  Cybersecurity Attack Analysis<a rel="noopener" class="anchor-link" href="#Project-Title-:--Cybersecurity-Attack-Analysis">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h4>About the Dataset :<a rel="noopener" class="anchor-link" href="#About-the-Dataset-:">&#182;</a></h4><p>Incribo&#39;s synthetic cyber dataset is a collection of 40,000 records  that contains 25 different metrics. The data is designed to represent realistic travel history, making it a valuable resource for cybersecurity analysis tasks. Analysts can use the dataset to assess heatmaps, attack signatures, and other types of cybersecurity data.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h2>Cybersecurity Dataset<a rel="noopener" class="anchor-link" href="#Cybersecurity-Dataset">&#182;</a></h2><table>
+<thead>
+<tr>
+<th>Column Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timestamp</td>
+<td>Date and time of the internet activity</td>
+</tr>
+<tr>
+<td>Source IP Address</td>
+<td>Internet address of the sender</td>
+</tr>
+<tr>
+<td>Destination IP Address</td>
+<td>Internet address of the receiver</td>
+</tr>
+<tr>
+<td>Source Port</td>
+<td>Number used by the sender to send information</td>
+</tr>
+<tr>
+<td>Destination Port</td>
+<td>Number used by the receiver to get information</td>
+</tr>
+<tr>
+<td>Protocol</td>
+<td>Language used by the devices to talk to each other (e.g., chat, email)</td>
+</tr>
+<tr>
+<td>Packet Length</td>
+<td>Size of the information package sent over the internet</td>
+</tr>
+<tr>
+<td>Packet Type</td>
+<td>Kind of information package (e.g., regular message, control message)</td>
+</tr>
+<tr>
+<td>Traffic Type</td>
+<td>Type of internet activity (e.g., browsing websites, sending emails)</td>
+</tr>
+<tr>
+<td>Payload Data</td>
+<td>The actual content sent over the internet</td>
+</tr>
+<tr>
+<td>Malware Indicators</td>
+<td>Signs that something bad (malware) might be trying to sneak in</td>
+</tr>
+<tr>
+<td>Anomaly Scores</td>
+<td>Numbers showing unusual activity compared to normal internet use</td>
+</tr>
+<tr>
+<td>Alerts/Warnings</td>
+<td>Notifications from security systems saying something suspicious might be happening</td>
+</tr>
+<tr>
+<td>Attack Type</td>
+<td>Kind of cyberattack that was done or might be happening (e.g., overwhelming a system with traffic, stealing information)</td>
+</tr>
+<tr>
+<td>Attack Signature</td>
+<td>Unique fingerprint of a known cyberattack</td>
+</tr>
+<tr>
+<td>Action Taken</td>
+<td>What was done to stop the threat</td>
+</tr>
+<tr>
+<td>Severity Level</td>
+<td>How serious the threat was (e.g., not serious, kind of serious, very serious)</td>
+</tr>
+<tr>
+<td>User Information</td>
+<td>Details about the person using the internet</td>
+</tr>
+<tr>
+<td>Device Information</td>
+<td>Details about the computer or phone being used</td>
+</tr>
+<tr>
+<td>Network Segment</td>
+<td>Part of the internet where the activity happened</td>
+</tr>
+<tr>
+<td>Geo-location Data</td>
+<td>Location information based on internet addresses</td>
+</tr>
+<tr>
+<td>Proxy Information</td>
+<td>Details about any relays used to connect to the internet</td>
+</tr>
+<tr>
+<td>Firewall Logs</td>
+<td>Records of what the security system allowed or blocked on the internet</td>
+</tr>
+<tr>
+<td>IDS/IPS Alerts</td>
+<td>Notifications from systems that watch for cyberattacks</td>
+</tr>
+<tr>
+<td>Log Source</td>
+<td>Where the information came from (e.g., security software, router)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h3>Importing the Required Libraries<a rel="noopener" class="anchor-link" href="#Importing-the-Required-Libraries">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Ignore Warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h3>Load the Dataset<a rel="noopener" class="anchor-link" href="#Load-the-Dataset">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;cybersecurity_attacks.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult">
+<div>
+
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Timestamp</th>
+<th>Source IP Address</th>
+<th>Destination IP Address</th>
+<th>Source Port</th>
+<th>Destination Port</th>
+<th>Protocol</th>
+<th>Packet Length</th>
+<th>Packet Type</th>
+<th>Traffic Type</th>
+<th>Payload Data</th>
+<th>...</th>
+<th>Action Taken</th>
+<th>Severity Level</th>
+<th>User Information</th>
+<th>Device Information</th>
+<th>Network Segment</th>
+<th>Geo-location Data</th>
+<th>Proxy Information</th>
+<th>Firewall Logs</th>
+<th>IDS/IPS Alerts</th>
+<th>Log Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>2023-05-30 06:33:58</td>
+<td>103.216.15.12</td>
+<td>84.9.164.252</td>
+<td>31225</td>
+<td>17616</td>
+<td>ICMP</td>
+<td>503</td>
+<td>Data</td>
+<td>HTTP</td>
+<td>Qui natus odio asperiores nam. Optio nobis ius...</td>
+<td>...</td>
+<td>Logged</td>
+<td>Low</td>
+<td>Reyansh Dugal</td>
+<td>Mozilla/5.0 (compatible; MSIE 8.0; Windows NT ...</td>
+<td>Segment A</td>
+<td>Jamshedpur, Sikkim</td>
+<td>150.9.97.135</td>
+<td>Log Data</td>
+<td>NaN</td>
+<td>Server</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2020-08-26 07:08:30</td>
+<td>78.199.217.198</td>
+<td>66.191.137.154</td>
+<td>17245</td>
+<td>48166</td>
+<td>ICMP</td>
+<td>1174</td>
+<td>Data</td>
+<td>HTTP</td>
+<td>Aperiam quos modi officiis veritatis rem. Omni...</td>
+<td>...</td>
+<td>Blocked</td>
+<td>Low</td>
+<td>Sumer Rana</td>
+<td>Mozilla/5.0 (compatible; MSIE 8.0; Windows NT ...</td>
+<td>Segment B</td>
+<td>Bilaspur, Nagaland</td>
+<td>NaN</td>
+<td>Log Data</td>
+<td>NaN</td>
+<td>Firewall</td>
+</tr>
+<tr>
+<th>2</th>
+<td>2022-11-13 08:23:25</td>
+<td>63.79.210.48</td>
+<td>198.219.82.17</td>
+<td>16811</td>
+<td>53600</td>
+<td>UDP</td>
+<td>306</td>
+<td>Control</td>
+<td>HTTP</td>
+<td>Perferendis sapiente vitae soluta. Hic delectu...</td>
+<td>...</td>
+<td>Ignored</td>
+<td>Low</td>
+<td>Himmat Karpe</td>
+<td>Mozilla/5.0 (compatible; MSIE 9.0; Windows NT ...</td>
+<td>Segment C</td>
+<td>Bokaro, Rajasthan</td>
+<td>114.133.48.179</td>
+<td>Log Data</td>
+<td>Alert Data</td>
+<td>Firewall</td>
+</tr>
+<tr>
+<th>3</th>
+<td>2023-07-02 10:38:46</td>
+<td>163.42.196.10</td>
+<td>101.228.192.255</td>
+<td>20018</td>
+<td>32534</td>
+<td>UDP</td>
+<td>385</td>
+<td>Data</td>
+<td>HTTP</td>
+<td>Totam maxime beatae expedita explicabo porro l...</td>
+<td>...</td>
+<td>Blocked</td>
+<td>Medium</td>
+<td>Fateh Kibe</td>
+<td>Mozilla/5.0 (Macintosh; PPC Mac OS X 10_11_5; ...</td>
+<td>Segment B</td>
+<td>Jaunpur, Rajasthan</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Alert Data</td>
+<td>Firewall</td>
+</tr>
+<tr>
+<th>4</th>
+<td>2023-07-16 13:11:07</td>
+<td>71.166.185.76</td>
+<td>189.243.174.238</td>
+<td>6131</td>
+<td>26646</td>
+<td>TCP</td>
+<td>1462</td>
+<td>Data</td>
+<td>DNS</td>
+<td>Odit nesciunt dolorem nisi iste iusto. Animi v...</td>
+<td>...</td>
+<td>Blocked</td>
+<td>Low</td>
+<td>Dhanush Chad</td>
+<td>Mozilla/5.0 (compatible; MSIE 5.0; Windows NT ...</td>
+<td>Segment C</td>
+<td>Anantapur, Tripura</td>
+<td>149.6.110.119</td>
+<td>NaN</td>
+<td>Alert Data</td>
+<td>Firewall</td>
+</tr>
+</tbody>
+</table>
+<p>5 rows &#215; 25 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h3>Exploratory Data Analysis<a rel="noopener" class="anchor-link" href="#Exploratory-Data-Analysis">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># List Columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult">
+<pre>Index([&#39;Timestamp&#39;, &#39;Source IP Address&#39;, &#39;Destination IP Address&#39;,
+       &#39;Source Port&#39;, &#39;Destination Port&#39;, &#39;Protocol&#39;, &#39;Packet Length&#39;,
+       &#39;Packet Type&#39;, &#39;Traffic Type&#39;, &#39;Payload Data&#39;, &#39;Malware Indicators&#39;,
+       &#39;Anomaly Scores&#39;, &#39;Alerts/Warnings&#39;, &#39;Attack Type&#39;, &#39;Attack Signature&#39;,
+       &#39;Action Taken&#39;, &#39;Severity Level&#39;, &#39;User Information&#39;,
+       &#39;Device Information&#39;, &#39;Network Segment&#39;, &#39;Geo-location Data&#39;,
+       &#39;Proxy Information&#39;, &#39;Firewall Logs&#39;, &#39;IDS/IPS Alerts&#39;, &#39;Log Source&#39;],
+      dtype=&#39;object&#39;)</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Shape of data</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, row and </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> columns in the Cybersecruity dataset&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output">
+<pre>There are 40000, row and 33 columns in the Cybersecruity dataset
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Dataset Info</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 40000 entries, 0 to 39999
+Data columns (total 25 columns):
+ #   Column                  Non-Null Count  Dtype  
+---  ------                  --------------  -----  
+ 0   Timestamp               40000 non-null  object 
+ 1   Source IP Address       40000 non-null  object 
+ 2   Destination IP Address  40000 non-null  object 
+ 3   Source Port             40000 non-null  int64  
+ 4   Destination Port        40000 non-null  int64  
+ 5   Protocol                40000 non-null  object 
+ 6   Packet Length           40000 non-null  int64  
+ 7   Packet Type             40000 non-null  object 
+ 8   Traffic Type            40000 non-null  object 
+ 9   Payload Data            40000 non-null  object 
+ 10  Malware Indicators      20000 non-null  object 
+ 11  Anomaly Scores          40000 non-null  float64
+ 12  Alerts/Warnings         19933 non-null  object 
+ 13  Attack Type             40000 non-null  object 
+ 14  Attack Signature        40000 non-null  object 
+ 15  Action Taken            40000 non-null  object 
+ 16  Severity Level          40000 non-null  object 
+ 17  User Information        40000 non-null  object 
+ 18  Device Information      40000 non-null  object 
+ 19  Network Segment         40000 non-null  object 
+ 20  Geo-location Data       40000 non-null  object 
+ 21  Proxy Information       20149 non-null  object 
+ 22  Firewall Logs           20039 non-null  object 
+ 23  IDS/IPS Alerts          19950 non-null  object 
+ 24  Log Source              40000 non-null  object 
+dtypes: float64(1), int64(3), object(21)
+memory usage: 7.6+ MB
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h3>Examining the Null and Missing Values<a rel="noopener" class="anchor-link" href="#Examining-the-Null-and-Missing-Values">&#182;</a></h3><p>Let&#39;s check for missing data!  Understanding null and missing values is important for accurate analysis.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult">
+<pre>Alerts/Warnings           20067
+IDS/IPS Alerts            20050
+Malware Indicators        20000
+Firewall Logs             19961
+Proxy Information         19851
+Attack Type                   0
+Geo-location Data             0
+Network Segment               0
+Device Information            0
+User Information              0
+Severity Level                0
+Action Taken                  0
+Attack Signature              0
+Timestamp                     0
+Source IP Address             0
+Anomaly Scores                0
+Payload Data                  0
+Traffic Type                  0
+Packet Type                   0
+Packet Length                 0
+Protocol                      0
+Destination Port              0
+Source Port                   0
+Destination IP Address        0
+Log Source                    0
+dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Missing Value by Percentage</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult">
+<pre>Timestamp                  0.0000
+Source IP Address          0.0000
+Destination IP Address     0.0000
+Source Port                0.0000
+Destination Port           0.0000
+Protocol                   0.0000
+Packet Length              0.0000
+Packet Type                0.0000
+Traffic Type               0.0000
+Payload Data               0.0000
+Malware Indicators        50.0000
+Anomaly Scores             0.0000
+Alerts/Warnings           50.1675
+Attack Type                0.0000
+Attack Signature           0.0000
+Action Taken               0.0000
+Severity Level             0.0000
+User Information           0.0000
+Device Information         0.0000
+Network Segment            0.0000
+Geo-location Data          0.0000
+Proxy Information         49.6275
+Firewall Logs             49.9025
+IDS/IPS Alerts            50.1250
+Log Source                 0.0000
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h2>Missing Values in Cybersecurity Dataset<a rel="noopener" class="anchor-link" href="#Missing-Values-in-Cybersecurity-Dataset">&#182;</a></h2><p>We&#39;ve identified significant missing values in several columns of our cybersecurity dataset, containing 40,000 rows and 25 columns. Here&#39;s a breakdown of the most concerning columns:</p>
+<ul>
+<li>Alerts/Warnings: <strong>50.17%</strong> (20,067 missing values)</li>
+<li>IDS/IPS Alerts: <strong>50.13%</strong> (20,050 missing values)</li>
+<li>Malware Indicators: <strong>50.00%</strong> (20,000 missing values)</li>
+<li>Firewall Logs: <strong>49.90%</strong> (19,961 missing values)</li>
+<li>Proxy Data: <strong>49.63%</strong> (19,851 missing values)</li>
+</ul>
+<p>As you can see, these columns have a substantial amount of missing data, potentially impacting our analysis. We&#39;ll address these missing values in the next steps to ensure robust and reliable results.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h3>First, let&#39;s address the missing values.<a rel="noopener" class="anchor-link" href="#First,-let&#39;s-address-the-missing-values.">&#182;</a></h3><p>Let&#39;s address the missing values in the cybersecurity dataset since they may cause errors in our subsequent analysis. Prior to selecting the best course of action to address the missing values, we must first identify them.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Determine recent activity</span>
+<span class="c1"># If the Alert Triggered is present, then it&#39;s a yes, else it&#39;s a no.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Alerts/Warnings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Alerts/Warnings&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;yes&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;Alert Triggered&#39;</span> <span class="k">else</span> <span class="s1">&#39;no&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#If the Malware Indicators is present, then it&#39;s a No, else it&#39;s a No Detection.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Malware Indicators&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Malware Indicators&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;No Detection&#39;</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#If Proxy Information is missing, it is assumed that there is no proxy</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Proxy Information&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Proxy Information&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;No proxy&#39;</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#If Firewall Logs is missing, it is assumed that there is no data</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Firewall Logs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Firewall Logs&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;No Data&#39;</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#If IDS/IPS Alerts is &quot;No Data&quot;, then it means that the alert was not generated by IDS/IPS.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;IDS/IPS Alerts&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;IDS/IPS Alerts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;No Data&#39;</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult">
+<pre>Timestamp                 0
+Attack Type               0
+IDS/IPS Alerts            0
+Firewall Logs             0
+Proxy Information         0
+Geo-location Data         0
+Network Segment           0
+Device Information        0
+User Information          0
+Severity Level            0
+Action Taken              0
+Attack Signature          0
+Alerts/Warnings           0
+Source IP Address         0
+Anomaly Scores            0
+Malware Indicators        0
+Payload Data              0
+Traffic Type              0
+Packet Type               0
+Packet Length             0
+Protocol                  0
+Destination Port          0
+Source Port               0
+Destination IP Address    0
+Log Source                0
+dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>Removed all missing values from the information</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h4>Explore the Device Information Column<a rel="noopener" class="anchor-link" href="#Explore-the-Device-Information-Column">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Device Information&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult">
+<pre>Device Information
+Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 6.2; Trident/3.0)                                                                                       35
+Mozilla/5.0 (compatible; MSIE 5.0; Windows 98; Trident/4.1)                                                                                           34
+Mozilla/5.0 (compatible; MSIE 6.0; Windows CE; Trident/4.0)                                                                                           33
+Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/3.0)                                                                                       31
+Mozilla/5.0 (compatible; MSIE 5.0; Windows NT 5.2; Trident/4.1)                                                                                       31
+                                                                                                                                                      ..
+Mozilla/5.0 (Macintosh; PPC Mac OS X 10_9_2; rv:1.9.2.20) Gecko/6474-09-17 07:53:12 Firefox/3.6.9                                                      1
+Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/535.0 (KHTML, like Gecko) CriOS/19.0.850.0 Mobile/88P921 Safari/535.0               1
+Mozilla/5.0 (Windows NT 5.0; km-KH; rv:1.9.2.20) Gecko/7799-03-13 07:30:55 Firefox/3.8                                                                 1
+Mozilla/5.0 (X11; Linux i686; rv:1.9.7.20) Gecko/6248-04-01 13:49:59 Firefox/3.8                                                                       1
+Mozilla/5.0 (iPod; U; CPU iPhone OS 3_0 like Mac OS X; tg-TJ) AppleWebKit/534.33.5 (KHTML, like Gecko) Version/4.0.5 Mobile/8B116 Safari/6534.33.5     1
+Name: count, Length: 32104, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Extract &#39;Device&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Browser&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Device Information&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># created the Browser column.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Browser&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult">
+<pre>0        Mozilla
+1        Mozilla
+2        Mozilla
+3        Mozilla
+4        Mozilla
+          ...   
+39995    Mozilla
+39996    Mozilla
+39997    Mozilla
+39998    Mozilla
+39999    Mozilla
+Name: Browser, Length: 40000, dtype: object</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="c1"># OS and device patterns to search for</span>
+<span class="n">patterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sa">r</span><span class="s1">&#39;Windows&#39;</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s1">&#39;Linux&#39;</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s1">&#39;Android&#39;</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s1">&#39;iPad&#39;</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s1">&#39;iPod&#39;</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s1">&#39;iPhone&#39;</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s1">&#39;Macintosh&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">extract_device_or_os</span><span class="p">(</span><span class="n">user_agent</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">patterns</span><span class="p">:</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">user_agent</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>  <span class="c1"># re.I makes the search case-insensitive</span>
+        <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+    <span class="k">return</span> <span class="s1">&#39;Unknown&#39;</span>  <span class="c1"># Return &#39;Unknown&#39; if no patterns match</span>
+
+<span class="c1"># Extract device or OS</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Device/OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Device Information&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">extract_device_or_os</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Browser&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult">
+<pre>Browser
+Mozilla    31951
+Opera       8049
+Name: count, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>The dataset has 31,951 occurrences of the Mozilla browser and 8,049 instances of the Opera browser are included in the sample, indicating a significant preference for Mozilla over Opera.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Device/OS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult">
+<pre>Device/OS
+Windows      17953
+Linux         8840
+Macintosh     5813
+iPod          2656
+Android       1620
+iPhone        1567
+iPad          1551
+Name: count, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>With 17,953 instances, Windows is the most widely used operating system, followed by Linux (8840 instances) and Macintosh (5813 instances), according to the results. There are far fewer examples of mobile devices, such as the iPod, Android, iPhone, and iPad (2656 for iPod, 1551 for iPad). The devices and OS are displayed in this data count.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Dropping the Device Information Column</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Device Information&#39;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">extract_time_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">):</span>
+    <span class="c1"># Convert timestamp column to datetime if it&#39;s not already</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">Timestamp</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">Timestamp</span><span class="p">])</span>
+    
+    <span class="c1"># Extract time features</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">Timestamp</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">Timestamp</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">Timestamp</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">Timestamp</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Minute&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">Timestamp</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">minute</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Second&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">Timestamp</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">second</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;DayOfWeek&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">Timestamp</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Assuming df is your DataFrame</span>
+<span class="c1"># Call the function and store the result in a new DataFrame</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">extract_time_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;Timestamp&#39;</span><span class="p">)</span>
+
+<span class="c1"># Check if new columns are created</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output">
+<pre>            Timestamp Source IP Address Destination IP Address  Source Port   
+0 2023-05-30 06:33:58     103.216.15.12           84.9.164.252        31225  \
+1 2020-08-26 07:08:30    78.199.217.198         66.191.137.154        17245   
+2 2022-11-13 08:23:25      63.79.210.48          198.219.82.17        16811   
+3 2023-07-02 10:38:46     163.42.196.10        101.228.192.255        20018   
+4 2023-07-16 13:11:07     71.166.185.76        189.243.174.238         6131   
+
+   Destination Port Protocol  Packet Length Packet Type Traffic Type   
+0             17616     ICMP            503        Data         HTTP  \
+1             48166     ICMP           1174        Data         HTTP   
+2             53600      UDP            306     Control         HTTP   
+3             32534      UDP            385        Data         HTTP   
+4             26646      TCP           1462        Data          DNS   
+
+                                        Payload Data  ... Log Source  Browser   
+0  Qui natus odio asperiores nam. Optio nobis ius...  ...     Server  Mozilla  \
+1  Aperiam quos modi officiis veritatis rem. Omni...  ...   Firewall  Mozilla   
+2  Perferendis sapiente vitae soluta. Hic delectu...  ...   Firewall  Mozilla   
+3  Totam maxime beatae expedita explicabo porro l...  ...   Firewall  Mozilla   
+4  Odit nesciunt dolorem nisi iste iusto. Animi v...  ...   Firewall  Mozilla   
+
+   Device/OS  Year Month Day Hour Minute Second DayOfWeek  
+0    Windows  2023     5  30    6     33     58         1  
+1    Windows  2020     8  26    7      8     30         2  
+2    Windows  2022    11  13    8     23     25         6  
+3  Macintosh  2023     7   2   10     38     46         6  
+4    Windows  2023     7  16   13     11      7         6  
+
+[5 rows x 33 columns]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult">
+<div>
+
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Timestamp</th>
+<th>Source IP Address</th>
+<th>Destination IP Address</th>
+<th>Source Port</th>
+<th>Destination Port</th>
+<th>Protocol</th>
+<th>Packet Length</th>
+<th>Packet Type</th>
+<th>Traffic Type</th>
+<th>Payload Data</th>
+<th>...</th>
+<th>Log Source</th>
+<th>Browser</th>
+<th>Device/OS</th>
+<th>Year</th>
+<th>Month</th>
+<th>Day</th>
+<th>Hour</th>
+<th>Minute</th>
+<th>Second</th>
+<th>DayOfWeek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>2023-05-30 06:33:58</td>
+<td>103.216.15.12</td>
+<td>84.9.164.252</td>
+<td>31225</td>
+<td>17616</td>
+<td>ICMP</td>
+<td>503</td>
+<td>Data</td>
+<td>HTTP</td>
+<td>Qui natus odio asperiores nam. Optio nobis ius...</td>
+<td>...</td>
+<td>Server</td>
+<td>Mozilla</td>
+<td>Windows</td>
+<td>2023</td>
+<td>5</td>
+<td>30</td>
+<td>6</td>
+<td>33</td>
+<td>58</td>
+<td>1</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2020-08-26 07:08:30</td>
+<td>78.199.217.198</td>
+<td>66.191.137.154</td>
+<td>17245</td>
+<td>48166</td>
+<td>ICMP</td>
+<td>1174</td>
+<td>Data</td>
+<td>HTTP</td>
+<td>Aperiam quos modi officiis veritatis rem. Omni...</td>
+<td>...</td>
+<td>Firewall</td>
+<td>Mozilla</td>
+<td>Windows</td>
+<td>2020</td>
+<td>8</td>
+<td>26</td>
+<td>7</td>
+<td>8</td>
+<td>30</td>
+<td>2</td>
+</tr>
+<tr>
+<th>2</th>
+<td>2022-11-13 08:23:25</td>
+<td>63.79.210.48</td>
+<td>198.219.82.17</td>
+<td>16811</td>
+<td>53600</td>
+<td>UDP</td>
+<td>306</td>
+<td>Control</td>
+<td>HTTP</td>
+<td>Perferendis sapiente vitae soluta. Hic delectu...</td>
+<td>...</td>
+<td>Firewall</td>
+<td>Mozilla</td>
+<td>Windows</td>
+<td>2022</td>
+<td>11</td>
+<td>13</td>
+<td>8</td>
+<td>23</td>
+<td>25</td>
+<td>6</td>
+</tr>
+<tr>
+<th>3</th>
+<td>2023-07-02 10:38:46</td>
+<td>163.42.196.10</td>
+<td>101.228.192.255</td>
+<td>20018</td>
+<td>32534</td>
+<td>UDP</td>
+<td>385</td>
+<td>Data</td>
+<td>HTTP</td>
+<td>Totam maxime beatae expedita explicabo porro l...</td>
+<td>...</td>
+<td>Firewall</td>
+<td>Mozilla</td>
+<td>Macintosh</td>
+<td>2023</td>
+<td>7</td>
+<td>2</td>
+<td>10</td>
+<td>38</td>
+<td>46</td>
+<td>6</td>
+</tr>
+<tr>
+<th>4</th>
+<td>2023-07-16 13:11:07</td>
+<td>71.166.185.76</td>
+<td>189.243.174.238</td>
+<td>6131</td>
+<td>26646</td>
+<td>TCP</td>
+<td>1462</td>
+<td>Data</td>
+<td>DNS</td>
+<td>Odit nesciunt dolorem nisi iste iusto. Animi v...</td>
+<td>...</td>
+<td>Firewall</td>
+<td>Mozilla</td>
+<td>Windows</td>
+<td>2023</td>
+<td>7</td>
+<td>16</td>
+<td>13</td>
+<td>11</td>
+<td>7</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>5 rows &#215; 33 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span> <span class="o">=</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult">
+<div>
+
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Source IP Address</th>
+<th>Destination IP Address</th>
+<th>Protocol</th>
+<th>Packet Type</th>
+<th>Traffic Type</th>
+<th>Payload Data</th>
+<th>Malware Indicators</th>
+<th>Alerts/Warnings</th>
+<th>Attack Type</th>
+<th>Attack Signature</th>
+<th>...</th>
+<th>Severity Level</th>
+<th>User Information</th>
+<th>Network Segment</th>
+<th>Geo-location Data</th>
+<th>Proxy Information</th>
+<th>Firewall Logs</th>
+<th>IDS/IPS Alerts</th>
+<th>Log Source</th>
+<th>Browser</th>
+<th>Device/OS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>count</th>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>...</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+<td>40000</td>
+</tr>
+<tr>
+<th>unique</th>
+<td>40000</td>
+<td>40000</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>40000</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>...</td>
+<td>3</td>
+<td>32389</td>
+<td>3</td>
+<td>8723</td>
+<td>20149</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>7</td>
+</tr>
+<tr>
+<th>top</th>
+<td>103.216.15.12</td>
+<td>84.9.164.252</td>
+<td>ICMP</td>
+<td>Control</td>
+<td>DNS</td>
+<td>Qui natus odio asperiores nam. Optio nobis ius...</td>
+<td>IoC Detected</td>
+<td>no</td>
+<td>DDoS</td>
+<td>Known Pattern A</td>
+<td>...</td>
+<td>Medium</td>
+<td>Ishaan Chaudhari</td>
+<td>Segment C</td>
+<td>Ghaziabad, Meghalaya</td>
+<td>No proxy</td>
+<td>Log Data</td>
+<td>No Data</td>
+<td>Firewall</td>
+<td>Mozilla</td>
+<td>Windows</td>
+</tr>
+<tr>
+<th>freq</th>
+<td>1</td>
+<td>1</td>
+<td>13429</td>
+<td>20237</td>
+<td>13376</td>
+<td>1</td>
+<td>20000</td>
+<td>20067</td>
+<td>13428</td>
+<td>20076</td>
+<td>...</td>
+<td>13435</td>
+<td>6</td>
+<td>13408</td>
+<td>16</td>
+<td>19851</td>
+<td>20039</td>
+<td>20050</td>
+<td>20116</td>
+<td>31951</td>
+<td>17953</td>
+</tr>
+</tbody>
+</table>
+<p>4 rows &#215; 21 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&#160;]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult">
+<pre>Index([&#39;Timestamp&#39;, &#39;Source IP Address&#39;, &#39;Destination IP Address&#39;,
+       &#39;Source Port&#39;, &#39;Destination Port&#39;, &#39;Protocol&#39;, &#39;Packet Length&#39;,
+       &#39;Packet Type&#39;, &#39;Traffic Type&#39;, &#39;Payload Data&#39;, &#39;Malware Indicators&#39;,
+       &#39;Anomaly Scores&#39;, &#39;Alerts/Warnings&#39;, &#39;Attack Type&#39;, &#39;Attack Signature&#39;,
+       &#39;Action Taken&#39;, &#39;Severity Level&#39;, &#39;User Information&#39;, &#39;Network Segment&#39;,
+       &#39;Geo-location Data&#39;, &#39;Proxy Information&#39;, &#39;Firewall Logs&#39;,
+       &#39;IDS/IPS Alerts&#39;, &#39;Log Source&#39;, &#39;Browser&#39;, &#39;Device/OS&#39;, &#39;Year&#39;, &#39;Month&#39;,
+       &#39;Day&#39;, &#39;Hour&#39;, &#39;Minute&#39;, &#39;Second&#39;, &#39;DayOfWeek&#39;],
+      dtype=&#39;object&#39;)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h3>Data Visualization<a rel="noopener" class="anchor-link" href="#Data-Visualization">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Checking the Day Column ploting with plotly</span>
+
+
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Day&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Malware Indicators&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of Malware Attacks by Day&#39;</span><span class="p">,</span>
+    <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;salmon&#39;</span><span class="p">}</span>  <span class="c1"># Choose any two contrasting colors</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>The above histogram shows that the 9th day of the month experienced. Highest number of attacks, totaling 720. The chart also indicates the variability in malware attack frequency across different days, highlighting potential patterns in attack frequency.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># month Distribution</span>
+
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> 
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">Pastel</span>  <span class="c1"># Using the same Pastel color sequence</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Checking the Month Column ploting with plotly</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Malware Indicators&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of Malware Attacks by Month&#39;</span><span class="p">,</span>
+    <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;salmon&#39;</span><span class="p">}</span>  <span class="c1"># Choose any two contrasting colors</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>The graph displays the number of malware assaults that occurred in August. 1,861 incidents were counted. Compared to previous months, this one has had the most attacks. It indicates that August had higher risks.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Year Distrition</span>
+
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> 
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">Pastel</span>  <span class="c1"># You can specify any color code or name you prefer</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Checking the Day Column ploting with plotly</span>
+
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Malware Indicators&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of Malware Attacks by Year&#39;</span><span class="p">,</span>
+    <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;salmon&#39;</span><span class="p">}</span>  <span class="c1"># Choose any two contrasting colors</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>The histogram graph shows that most malware attacks were happened from mid-2021 to mid 2022. This period experienced the highest frequency of incidents. It highlights a significant increase in cyber attack during this time periods</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Checking the Protocol distribution with Bar Chart Using Plotly</span>
+
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Protocol&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Malware Indicators&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of Malware Attacks by Protocol&#39;</span><span class="p">,</span>
+    <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;salmon&#39;</span><span class="p">}</span>  <span class="c1"># Choose any two contrasting colors</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h2>Network Protocol Descriptions (ICMP, UDP, TCP)<a rel="noopener" class="anchor-link" href="#Network-Protocol-Descriptions-(ICMP,-UDP,-TCP)">&#182;</a></h2><p><strong>ICMP (Internet Control Message Protocol):</strong></p>
+<ul>
+<li>ICMP sends error messages and operational information about packet processing issues.</li>
+<li>It is used for diagnostics, like ping and traceroute.</li>
+<li>ICMP operates at the network layer (Layer 3) of the OSI model.</li>
+</ul>
+<p><strong>UDP (User Datagram Protocol):</strong></p>
+<ul>
+<li>UDP is a simple, connectionless protocol for sending packets with low overhead.</li>
+<li>It operates at the transport layer (Layer 4) and is used for fast, efficient applications like streaming and gaming.</li>
+</ul>
+<p><strong>TCP (Transmission Control Protocol):</strong></p>
+<ul>
+<li>TCP is a connection-oriented protocol ensuring reliable, ordered data delivery with error-checking.</li>
+<li>It operates at the transport layer (Layer 4) of the OSI model and is used for critical applications like web browsing and email.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h4>Analyse the Traffic Type<a rel="noopener" class="anchor-link" href="#Analyse-the-Traffic-Type">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Traffic Distribution</span>
+
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">names</span><span class="o">=</span><span class="s1">&#39;Traffic Type&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Traffic Distribution&#39;</span><span class="p">,</span> 
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">Pastel</span>  <span class="c1"># Choose any color sequence</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>The pie chart reveals an almost similar distribution of traffic types: DNS (33.4%), HTTP (33.4%), and FTP (33.2%). This suggests that the three traffic categories are being used in a balanced manner.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Ploting the Traffic Type distribution with Bar Chart Using Plotly</span>
+
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Traffic Type&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Malware Indicators&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of Malware Attacks by Traffic Type&#39;</span><span class="p">,</span>
+    <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;salmon&#39;</span><span class="p">}</span>  <span class="c1"># Choose any two contrasting colors</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p><strong>HTTP (Hypertext Transfer Protocol):</strong></p>
+<ul>
+<li>HTTP is used to transmit web pages and web content over the internet.</li>
+<li>It operates at the application layer (Layer 7) of the OSI model.</li>
+<li>HTTP is stateless, meaning each request-response interaction is independent.</li>
+<li>It is the foundation for web browsing and accessing websites.</li>
+</ul>
+<p><strong>DNS (Domain Name System):</strong></p>
+<ul>
+<li>DNS translates domain names (like www.example.com) into IP addresses.</li>
+<li>It operates at the application layer (Layer 7) of the OSI model.</li>
+<li>DNS allows users to access websites using easy-to-remember names instead of numerical IP addresses.</li>
+</ul>
+<p><strong>FTP (File Transfer Protocol):</strong></p>
+<ul>
+<li>FTP transfers files between a client and a server on a network.</li>
+<li>It operates at the application layer (Layer 7) of the OSI model.</li>
+<li>Common uses of FTP include uploading website files to a server and sharing files between computers.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h3>Analyzing the Attack Type<a rel="noopener" class="anchor-link" href="#Analyzing-the-Attack-Type">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Attack Type Distribution</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">names</span><span class="o">=</span><span class="s1">&#39;Attack Type&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Analysing the Attack Type Distribution&#39;</span><span class="p">,</span> 
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">Pastel</span>  <span class="c1"># Choose any color sequence</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>The pie graphic depicts a nearly equal distribution of attack types: DDOS (33.6%), malware (33.3%), and intrusion (33.25%). This means that each form of attack occurs at a comparable frequency. The statistics indicate a balanced threat landscape among these three assault types.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Checking the attack types distribution with Bar Chart Using Plotly</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Attack Type&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Traffic Type&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of Malware Attacks by Attack Type&#39;</span><span class="p">,</span>
+    <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DNS&#39;</span><span class="p">:</span> <span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="s1">&#39;HTTP&#39;</span><span class="p">:</span> <span class="s1">&#39;salmon&#39;</span><span class="p">,</span> <span class="s1">&#39;FTP&#39;</span><span class="p">:</span> <span class="s1">&#39;lightgreen&#39;</span><span class="p">}</span>  <span class="c1"># Choose any colors you like</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h3>Analyzing the Browser, Devices and Attack Types<a rel="noopener" class="anchor-link" href="#Analyzing-the-Browser,-Devices-and-Attack-Types">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Browsers Distribution</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">names</span><span class="o">=</span><span class="s1">&#39;Browser&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Browser Distribution&#39;</span><span class="p">,</span> 
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">Pastel</span>  <span class="c1"># Choose any color sequence</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>The &quot;Browser Distribution&quot; pie chart shows that Mozilla is used by 20.1% of users, while other browsers account for 79.9%. This shows that, while considerable, Mozilla is not the most popular browser among users, with the majority choosing alternative options.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Platform Distribution</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">names</span><span class="o">=</span><span class="s1">&#39;Device/OS&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Platform Distribution&#39;</span><span class="p">,</span> 
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">Pastel</span>  <span class="c1"># Choose any color sequence</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>The chart shows the distribution of different platforms on the smartphone market. Android has the largest market share with 46.7%, followed by iOS with 23%. Windows, Linux, Macintosh, and iPod platforms all have a market share of less than 7% each.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Platform Distribution with Bar Chart </span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span><span class="s1">&#39;Device/OS&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;Browser&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Platform Distribution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Checking the Browser and Devices with Attack Type distribution with Bar Chart Using Plotly</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;Device/OS&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;Attack Type&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Number of Malware Attacks by Browser and Devices&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># checking the browser against the attack type</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;Browser&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Attack Type&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span> <span class="s1">&#39;Number of Attacks by Browser&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h3>Analysing the Log Source, Action Taken<a rel="noopener" class="anchor-link" href="#Analysing-the-Log-Source,-Action-Taken">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Log Source Distribution</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Log Source&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Log Source&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Log Source Distribution</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Action Taken&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Action Taken&#39;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">Pastel</span>  <span class="c1"># Use the custom color sequence</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Log Source Distribution</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Action Taken&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Attack Type&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Log Source&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Log Source Distribution</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Log Source&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Attack Type&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Log Source&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h4>Packet Length Distribution for Various Attack Types<a rel="noopener" class="anchor-link" href="#Packet-Length-Distribution-for-Various-Attack-Types">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&#160;[&#160;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># Filter data for each attack type</span>
+<span class="n">malware_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Attack Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Malware&#39;</span><span class="p">][</span><span class="s1">&#39;Packet Length&#39;</span><span class="p">]</span>
+<span class="n">intrusion_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Attack Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Intrusion&#39;</span><span class="p">][</span><span class="s1">&#39;Packet Length&#39;</span><span class="p">]</span>
+<span class="n">ddos_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Attack Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DDoS&#39;</span><span class="p">][</span><span class="s1">&#39;Packet Length&#39;</span><span class="p">]</span>
+
+<span class="c1"># Create histograms for each attack type</span>
+<span class="n">malware_histo</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">malware_data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Malware&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">intrusion_histo</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">intrusion_data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Intrusion&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ddos_histo</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">ddos_data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;DDoS&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="c1"># Create layout</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Packet Length Distribution for Various Attack Types&#39;</span><span class="p">,</span>
+                   <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Packet Length&#39;</span><span class="p">),</span>
+                   <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frequency&#39;</span><span class="p">))</span>
+
+<span class="c1"># Create figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">malware_histo</span><span class="p">,</span> <span class="n">intrusion_histo</span><span class="p">,</span> <span class="n">ddos_histo</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
+
+<span class="c1"># Show plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output">
+<div> <div class="plotly-graph-div" style="height:525px;width:100%;"></div>  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<p>The histogram shows the packet length distributions for Malware, Intrusion, and DDoS attacks. Malware has a definite peak, while intrusion has greater variability, and DDoS has clustered patterns, providing insights into attack characteristics for focused security methods.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h2>Conclusion<a rel="noopener" class="anchor-link" href="#Conclusion">&#182;</a></h2><p>Finally, the study of cybersecurity insights extracted from a dataset of 40,000 records offers light on significant patterns and vulnerabilities. It demonstrates a diverse environment of browser and device usage, with Windows devices being the primary targets for potential cyber threats. The temporal analysis reveals noteworthy patterns, such as increased assault rates on specific dates and months, which may indicate possible vulnerabilities or purposeful tactics by threat actors. Using these data, firms may strategically deploy resources, strengthen endpoint security, and improve incident response methods to boost their defenses against changing cyber threats. Businesses can improve the security of their digital infrastructure and data assets by implementing proactive steps based on these findings.
+.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput">
+<h2>Recommendations<a rel="noopener" class="anchor-link" href="#Recommendations">&#182;</a></h2><p>Following are key recommendations to strengthen your organization&#39;s cybersecurity posture based on the data analysis:</p>
+<p><strong>Threat Intelligence Gathering:</strong></p>
+<ul>
+<li><strong>Enhance Real-Time Threat Monitoring:</strong> Integrate automated threat intelligence systems to stay on top of the latest cyber threats and vulnerabilities. Collaborate with cybersecurity communities to gain broader insights and develop more effective threat mitigation strategies.</li>
+<li><strong>Contextual Analysis:</strong> Analyze threat data alongside external factors like global events or industry trends to anticipate and prepare for potential attacks.</li>
+</ul>
+<p><strong>Vulnerability Assessment and Risk Prioritization:</strong></p>
+<ul>
+<li><strong>Regular Assessments:</strong> Conduct frequent vulnerability assessments to identify and address security weaknesses before they can be exploited.</li>
+<li><strong>Risk Management:</strong> Develop a risk prioritization strategy that considers both the potential impact and likelihood of various threats, allowing for focused and efficient resource allocation.</li>
+</ul>
+<p><strong>Security Awareness Training Development:</strong></p>
+<ul>
+<li><strong>Comprehensive Training Programs:</strong> Design training programs tailored to different user roles within the organization to improve overall security awareness and response capabilities.</li>
+<li><strong>Phishing Simulations:</strong> Implement regular phishing simulations to test and reinforce employee readiness, keeping them alert to potential email-based attacks.</li>
+</ul>
+<p><strong>Endpoint Security Solutions Evaluation and Deployment:</strong></p>
+<ul>
+<li><strong>Advanced Endpoint Protection:</strong> Deploy robust endpoint security solutions equipped with features like antivirus, anti-malware, and firewalls. Prioritize protecting the most commonly used devices, such as Windows systems.</li>
+<li><strong>Cross-Platform Security:</strong> Ensure adequate security measures are also in place for less common devices (e.g., iPads, iPods) to prevent them from becoming attacker entry points.</li>
+</ul>
+<p><strong>Cybersecurity Policy Development:</strong></p>
+<ul>
+<li><strong>Clear Policies and Procedures:</strong> Develop and document comprehensive cybersecurity policies outlining roles, responsibilities, and standard operating procedures for security incidents.</li>
+<li><strong>Policy Review and Update:</strong> Regularly review and update policies to address emerging threats and changes in the business environment.</li>
+</ul>
+<p><strong>Incident Response Plan Documentation:</strong></p>
+<ul>
+<li><strong>Detailed Incident Response Plans:</strong> Create detailed incident response plans covering detection, containment, eradication, and recovery processes.</li>
+<li><strong>Regular Drills:</strong> Conduct regular incident response drills to ensure all team members understand their roles and responsibilities during a cyber incident.</li>
+</ul>
+<p><strong>Security Governance Framework Implementation:</strong></p>
+<ul>
+<li><strong>Governance Framework:</strong> Implement a robust security governance framework to ensure that cybersecurity efforts are aligned with business objectives and regulatory requirements.</li>
+<li><strong>Continuous Improvement:</strong> Establish a governance committee to oversee cybersecurity initiatives, ensuring continuous improvement and adaptation to new threats.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+
+<script type="module" src="https://s.brightspace.com/lib/bsi/2024.7.190/unbundled/mathjax.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
+						if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+							document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+								elm.setAttribute('style', 'display: block; height: 0.5rem;');
+							});
+
+							window.D2L.MathJax.loadMathJax({
+								outputScale: 1.5,
+								renderLatex: true,
+								enableMML3Support: false
+							});
+						}
+					});</script><script type="module" src="https://s.brightspace.com/lib/bsi/2024.7.190/unbundled/prism.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script type="module" src="https://s.brightspace.com/lib/bsi/2024.7.190/unbundled/embeds.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script></body></html>
